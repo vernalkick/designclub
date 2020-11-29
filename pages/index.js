@@ -5,17 +5,10 @@ import { H2 } from '../components/designSystem'
 import FeaturedEvent from '../components/FeaturedEvent'
 import Community from '../components/Community'
 import Person from '../components/Person'
-import { getTeam } from "../lib/api"
+import { getEverything } from "../lib/api"
 
-const team = [
-  {
-    name: "Ariane Bédard",
-    bio: "Ariane is the co-founder of the Ottawa Design Club. The idea of being part of an inclusive community of like-minded creatives is what pushed Ariane to join forces with Isabelle and create this chapter of the Design Club in her city. Designer for over 10 years, she now works as a Senior Graphic Designer for the University of Ottawa. There, she works with a dynamic marketing team to promote the Student Experience. Multi-passionate, she loves to learn and to take on all kinds of new projects.",
-    instagram: ""
-  }
-]
 
-export default function Home({data}) {
+export default function Home({people, cities, events}) {
   return (
     <>
       <Head>
@@ -27,18 +20,20 @@ export default function Home({data}) {
         <Header />
         
         <H2>Upcoming Events</H2>
-        <FeaturedEvent />
+        {events.map(event => 
+          <FeaturedEvent event={event} />  
+        )}
         
         <H2>Our Communities</H2>
         <div className="communities">
-          <Community city="Marseille" country="France" />
-          <Community city="Montréal" country="Canada" />
-          <Community city="Ottawa" country="Canada" />
+          {cities.map(city =>
+            <Community city={city.name} country={city.country} imageURL={city.image.url} />  
+          )}
         </div>
         
         <H2>About Us</H2>
         <div className="people">
-          {data.allPeople.map(person =>
+          {people.map(person =>
             <Person person={person} />  
           )}
         </div>
@@ -70,5 +65,5 @@ export default function Home({data}) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  return await getTeam(preview)
+  return await getEverything(preview)
 }

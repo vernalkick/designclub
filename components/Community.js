@@ -4,7 +4,7 @@ import { Box, BoxContainer } from "./Box"
 const Community = ({imageURL, city, country}) => (
   <>
     <Box>
-      <img src="/images/event-graphic.png" />
+      <img src={imageURL} />
       <BoxContainer>
         <div className="content">
           <div className="description">

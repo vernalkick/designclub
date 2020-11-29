@@ -2,22 +2,29 @@ import { H3, P, Button } from "./designSystem"
 import { Box, BoxContainer } from "./Box"
 import Pill from "./Pill"
 
+const formattedDate = (dateString) => {
+  const date = Date.parse(dateString)
+  const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }
+  const formatter = new Intl.DateTimeFormat('default', options)
+  return formatter.format(date)
+}
+
 const FeaturedEvent = ({event}) => (
   <>
     <Box className="container">
-      <img src="/images/event-graphic.png" className="image" />
+      <img src={event.image.url} className="image" />
       <BoxContainer>
         <div className="detailsContainer">
           <div className="titleContainer">
-            <H3 className="title">Open Letters</H3>
-            <P className="date">Thursday November 26 at 7PM</P>
-            <Pill>Online Event</Pill>
+            <H3 className="title">{event.title}</H3>
+            <P className="date">{formattedDate(event.date)}</P>
+            <Pill>{event.eventType}</Pill>
           </div>
           <div className="descriptionContainer">
-            <P className="description">Pour notre premier événement en ligne, nous accueillerons Audrey Girard et Patricia Lussier de la firme d’architecture Lemay et Martin Laviolette, fondateur de Cité Mémoire qui vont nous parler de comment nos espaces publics doivent évoluer pour répondre à notre nouvelle réalité tout en les optimisant pour le long terme.</P>
+            <P className="description">{event.description}</P>
             <div className="actions">
-              <Button primary>Get a ticket</Button>
-              <Button>View on Facebook</Button>
+              {event.ticketUrl && <Button primary href={event.ticketUrl}>Get a ticket</Button>}
+              {event.facebookUrl && <Button>View on Facebook</Button>}
             </div>
           </div>
         </div>
