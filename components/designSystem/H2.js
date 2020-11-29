@@ -7,6 +7,7 @@ const H2 = ({children}) => (
         font-size: 40px;
         font-weight: 700;
         line-height: 1.1;
+        margin: 0 0 0.5em 0;
       }
       
       @media (min-width: 800px) {

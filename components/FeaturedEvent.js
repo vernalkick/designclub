@@ -13,7 +13,7 @@ const FeaturedEvent = ({event}) => (
   <>
     <Box className="container">
       <img src={event.image.url} className="image" />
-      <BoxContainer>
+      <BoxContainer large>
         <div className="detailsContainer">
           <div className="titleContainer">
             <H3 className="title">{event.title}</H3>
@@ -44,19 +44,25 @@ const FeaturedEvent = ({event}) => (
         
         .detailsContainer {
           display: grid;
-          // grid-template-columns: 3fr 5fr;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          
+          // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
           grid-gap: 25px;
         }
         
         .descriptionContainer {
-          grid-column: span 2;
+          // grid-column: span 2;
           display: grid;
           grid-gap: 25px;
         }
         
         .actions > :global(*) {
           margin-right: 15px;
+        }
+        
+        @media (min-width: 800px) {
+          .detailsContainer {
+            grid-template-columns: 3fr 5fr;
+          }
         }
       `}
     </style>

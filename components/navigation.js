@@ -1,11 +1,11 @@
 const Navigation = () => (
   <>
     <ul>
-      <NavigationItem url="http://google.com" isSelected>Home</NavigationItem>
+      <NavigationItem url="/" isSelected>Home</NavigationItem>
       <NavigationItem url="/about">About</NavigationItem>
-      <NavigationItem url="/podcast">Podcast</NavigationItem>
-      <NavigationItem url="/shop">Shop</NavigationItem>
-      <NavigationItem url="/contact">Contact</NavigationItem>
+      <NavigationItem url="https://design-club-podcast.simplecast.com">Podcast</NavigationItem>
+      <NavigationItem url="https://ottawa-design-club.myshopify.com">Shop</NavigationItem>
+      <NavigationItem url="mailto:kevin@kevinclark.ca">Contact</NavigationItem>
     </ul>
     
     <style jsx>

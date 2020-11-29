@@ -17,38 +17,58 @@ export default function Home({people, cities, events}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <div className="container">
-        <Header />
-        
-        <Intro />
-        
-        <H2>Upcoming Events</H2>
-        {events.map(event => 
-          <FeaturedEvent event={event} />  
-        )}
-        
-        <H2>Our Communities</H2>
-        <div className="communities">
-          {cities.map(city =>
-            <Community city={city.name} country={city.country} imageURL={city.image.url} />  
-          )}
+      <div className="wrapper">
+        <div className="container">
+          <Header />
+          
+          <div className="section">
+            <Intro />
+          </div>
+          
+          <div className="section">
+            <H2>Upcoming Events</H2>
+            {events.map(event => 
+              <FeaturedEvent event={event} />  
+            )}
+          </div>
+          
+          <div className="section">
+            <H2>Our Communities</H2>
+            <div className="communities">
+              {cities.map(city =>
+                <Community city={city.name} country={city.country} imageURL={city.image.url} />  
+              )}
+            </div>
+          </div>
+          
+          
+          <div className="section">
+            <H2>About Us</H2>
+            <div className="people">
+              {people.map(person =>
+                <Person person={person} />  
+              )}
+            </div>
+          </div>
+          
         </div>
-        
-        <H2>About Us</H2>
-        <div className="people">
-          {people.map(person =>
-            <Person person={person} />  
-          )}
-        </div>
-        
       </div>
+
     
       <style jsx>
         {`
+          .wrapper {
+            overflow: hidden;
+          }
+          
+          .section {
+            padding: 90px 0;
+          }
+          
           .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px;
+            padding: 15px;
           }
           
           .communities {
@@ -60,6 +80,12 @@ export default function Home({people, cities, events}) {
           .people {
             display: grid;
             grid-gap: 40px;
+          }
+          
+          @media (min-width: 800px) {
+            .container {
+              padding: 40px;
+            }
           }
         `}
       </style>
