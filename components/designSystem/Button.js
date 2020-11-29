@@ -1,6 +1,6 @@
-const Button = ({primary, href, children}) => (
+const Button = ({primary, href, children, ...props}) => (
   <>
-    <a href={href} className={primary ? 'primary' : 'secondary'}>{children}</a>
+    <a href={href} className={primary ? 'primary' : 'secondary'} {...props}>{children}</a>
     
     <style jsx>{`
       a {

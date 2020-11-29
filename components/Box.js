@@ -16,9 +16,9 @@ const Box = ({children, ...props}) => (
   </>
 )
 
-const BoxContainer = ({children, ...props}) => (
+const BoxContainer = ({children, large, ...props}) => (
   <>
-    <div {...props}>
+    <div className={large && "large"} {...props}>
       {children}
     </div>
     
@@ -26,6 +26,10 @@ const BoxContainer = ({children, ...props}) => (
       {`
         div {
           padding: 25px;
+        }
+        
+        .large {
+          padding: 50px;
         }
       `}
     </style>

@@ -6,12 +6,14 @@ const Person = ({person}) => (
     <Box>
       <div className="container">
         <div className="imageContainer">
-          <img src="/images/event-graphic.png" className="image" />
+          <img src={person.image.url} className="image" />
         </div>
-        <BoxContainer>
+        <BoxContainer large>
           <H3>{person.name}</H3>
           <P>{person.bio}</P>
-          <Button href={person.instagram}>Follow on Instagram</Button>
+          <div className="buttonContainer">
+            <Button href={person.instagram}>Follow on Instagram</Button>
+          </div>
         </BoxContainer>
       </div>
     </Box>
@@ -23,9 +25,22 @@ const Person = ({person}) => (
           grid-template-columns: 1fr 2fr;
         }
         
+        .imageContainer {
+          position: relative;
+        }
+        
         .image {
-          height: 100%;
           object-fit: cover;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+        }
+        
+        .buttonContainer {
+          margin-top: 25px;
         }
       `}
     </style>

@@ -5,6 +5,7 @@ import { H2 } from '../components/designSystem'
 import FeaturedEvent from '../components/FeaturedEvent'
 import Community from '../components/Community'
 import Person from '../components/Person'
+import { getTeam } from "../lib/api"
 
 const team = [
   {
@@ -14,7 +15,7 @@ const team = [
   }
 ]
 
-export default function Home() {
+export default function Home({data}) {
   return (
     <>
       <Head>
@@ -31,14 +32,16 @@ export default function Home() {
         <H2>Our Communities</H2>
         <div className="communities">
           <Community city="Marseille" country="France" />
-          <Community city="Montreal" country="Canada" />
+          <Community city="Montréal" country="Canada" />
           <Community city="Ottawa" country="Canada" />
         </div>
         
         <H2>About Us</H2>
-        {team.map(person =>
-          <Person person={person} />  
-        )}
+        <div className="people">
+          {data.allPeople.map(person =>
+            <Person person={person} />  
+          )}
+        </div>
         
       </div>
     
@@ -55,8 +58,17 @@ export default function Home() {
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             grid-gap: 40px;
           }
+          
+          .people {
+            display: grid;
+            grid-gap: 40px;
+          }
         `}
       </style>
     </>
   )
+}
+
+export async function getStaticProps({ preview = false }) {
+  return await getTeam(preview)
 }
