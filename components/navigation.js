@@ -37,6 +37,7 @@ const NavigationItem = ({url, isSelected, children}) => (
           letter-spacing: 0.17em;
           color: rgba(255, 255, 255, 0.6);
           margin-right: 2em;
+          font-size: 0.875em;
         }
         
         li:hover {
@@ -46,6 +47,12 @@ const NavigationItem = ({url, isSelected, children}) => (
         .selected {
           font-weight: bold;
           color: #fff;
+        }
+        
+        @media (min-width: 800px) {
+          li { 
+            font-size: 1em;
+          }
         }
       `}
     </style>

@@ -22,11 +22,12 @@ const Person = ({person}) => (
       {`
         .container {
           display: grid;
-          grid-template-columns: 1fr 2fr;
+          grid-template-columns: 1fr;
         }
         
         .imageContainer {
           position: relative;
+          height: 60vw;
         }
         
         .image {
@@ -41,6 +42,16 @@ const Person = ({person}) => (
         
         .buttonContainer {
           margin-top: 25px;
+        }
+        
+        @media (min-width: 800px) {
+          .imageContainer {
+            height: auto;
+          }
+          
+          .container {
+            grid-template-columns: 1fr 2fr;
+          }
         }
       `}
     </style>

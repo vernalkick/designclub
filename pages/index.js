@@ -5,6 +5,7 @@ import { H2 } from '../components/designSystem'
 import FeaturedEvent from '../components/FeaturedEvent'
 import Community from '../components/Community'
 import Person from '../components/Person'
+import Intro from '../components/Intro'
 import { getEverything } from "../lib/api"
 
 
@@ -12,12 +13,14 @@ export default function Home({people, cities, events}) {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Design Club</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
       <div className="container">
         <Header />
+        
+        <Intro />
         
         <H2>Upcoming Events</H2>
         {events.map(event => 

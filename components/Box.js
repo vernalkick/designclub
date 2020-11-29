@@ -1,6 +1,6 @@
 const Box = ({children, ...props}) => (
   <>
-    <div props>
+    <div {...props}>
       {children}
     </div>
     

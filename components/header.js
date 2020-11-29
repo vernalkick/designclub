@@ -16,6 +16,7 @@ const Header = () => (
         header {
           display: grid;
           grid-row-gap: 20px;
+          margin-top: 4vw;
         }
         
         .logo {
