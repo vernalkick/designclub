@@ -11,7 +11,7 @@ const P = ({children, ...props}) => (
       
       @media (min-width: 800px) {
         p {
-          font-size: 21px;
+          font-size: 19px;
         }
       }
     `}</style>
