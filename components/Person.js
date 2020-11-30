@@ -9,7 +9,7 @@ const Person = ({person}) => (
           <img src={person.image.url} className="image" />
         </div>
         <BoxContainer large>
-          <H3>{person.name}</H3>
+          <H3 className="name">{person.name}</H3>
           <P>{person.bio}</P>
           <div className="buttonContainer">
             <Button href={person.instagram}>Follow on Instagram</Button>
@@ -23,6 +23,10 @@ const Person = ({person}) => (
         .container {
           display: grid;
           grid-template-columns: 1fr;
+        }
+        
+        .container :global(.name) {
+          margin-bottom: 0.5em;
         }
         
         .imageContainer {

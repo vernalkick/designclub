@@ -4,7 +4,8 @@ import Pill from "./Pill"
 
 const formattedDate = (dateString) => {
   const date = Date.parse(dateString)
-  const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }
+  const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZoneName: 'short' }
+  
   const formatter = new Intl.DateTimeFormat('default', options)
   return formatter.format(date)
 }

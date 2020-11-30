@@ -25,11 +25,21 @@ const BoxContainer = ({children, large, ...props}) => (
     <style jsx>
       {`
         div {
-          padding: 25px;
+          padding: 20px;
         }
         
         .large {
-          padding: 50px;
+          padding: 20px;
+        }
+        
+        @media (min-width: 800px) {
+          div {
+            padding: 25px;
+          }
+          
+          .large {
+            padding: 50px;
+          }
         }
       `}
     </style>

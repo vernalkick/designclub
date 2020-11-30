@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Header from '../components/header'
-import { H2 } from '../components/designSystem'
+import { H2, H3 } from '../components/designSystem'
 import FeaturedEvent from '../components/FeaturedEvent'
 import Community from '../components/Community'
 import Person from '../components/Person'
@@ -9,7 +9,7 @@ import Intro from '../components/Intro'
 import { getEverything } from "../lib/api"
 
 
-export default function Home({people, cities, events}) {
+export default function Home({cities, events, groupedPeople}) {
   return (
     <>
       <Head>
@@ -36,19 +36,24 @@ export default function Home({people, cities, events}) {
             <H2>Our Communities</H2>
             <div className="communities">
               {cities.map(city =>
-                <Community city={city.name} country={city.country} imageURL={city.image.url} />  
+                <Community city={city} />  
               )}
             </div>
           </div>
           
           
-          <div className="section">
+          <div className="section" id="about-us">
             <H2>About Us</H2>
-            <div className="people">
-              {people.map(person =>
-                <Person person={person} />  
-              )}
-            </div>
+            {Object.keys(groupedPeople).map(city =>
+              <div className="about-city">
+                <H3>{city}</H3>
+                <div className="people">
+                  {groupedPeople[city].map(person =>
+                    <Person person={person} />
+                  )}
+                </div>
+              </div>
+            )}
           </div>
           
         </div>
@@ -62,7 +67,7 @@ export default function Home({people, cities, events}) {
           }
           
           .section {
-            padding: 90px 0;
+            padding: 30px 0;
           }
           
           .container {
@@ -80,11 +85,20 @@ export default function Home({people, cities, events}) {
           .people {
             display: grid;
             grid-gap: 40px;
+            margin-top: 20px;
+          }
+          
+          .about-city {
+            margin-bottom: 40px;
           }
           
           @media (min-width: 800px) {
             .container {
               padding: 40px;
+            }
+            
+            .section {
+              padding: 90px 0;
             }
           }
         `}

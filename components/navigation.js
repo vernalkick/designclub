@@ -2,7 +2,7 @@ const Navigation = () => (
   <>
     <ul>
       <NavigationItem url="/" isSelected>Home</NavigationItem>
-      <NavigationItem url="/about">About</NavigationItem>
+      <NavigationItem url="#about-us">About</NavigationItem>
       <NavigationItem url="https://design-club-podcast.simplecast.com">Podcast</NavigationItem>
       <NavigationItem url="https://ottawa-design-club.myshopify.com">Shop</NavigationItem>
       <NavigationItem url="mailto:kevin@kevinclark.ca">Contact</NavigationItem>
