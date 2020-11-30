@@ -28,3 +28,11 @@ img {
 p {
   margin: 0;
 }
+
+@font-face {
+  font-family: 'sharp_grotesk_medium_25Rg';
+  src: url('/fonts/sharpgroteskmedium25-webfont.woff2') format('woff2'),
+       url('/fonts/sharpgroteskmedium25-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}

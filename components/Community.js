@@ -2,8 +2,8 @@ import { H4, P, Button } from "./designSystem"
 import { Box, BoxContainer } from "./Box"
 import { Facebook, Instagram } from "./Icons"
 
-const Community = ({city}) => (
-  <>
+const Community = ({city, ...props}) => (
+  <div {...props}>
     <Box>
       <img src={city.image.url} />
       <BoxContainer>
@@ -35,7 +35,7 @@ const Community = ({city}) => (
         }
       `}
     </style>
-  </>
+  </div>
 )
 
 export default Community

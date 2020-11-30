@@ -10,8 +10,8 @@ const formattedDate = (dateString) => {
   return formatter.format(date)
 }
 
-const FeaturedEvent = ({event}) => (
-  <>
+const FeaturedEvent = ({event, ...props}) => (
+  <div {...props}>
     <Box className="container">
       <img src={event.image.url} className="image" />
       <BoxContainer large>
@@ -67,7 +67,7 @@ const FeaturedEvent = ({event}) => (
         }
       `}
     </style>
-  </>
+  </div>
 )
 
 export default FeaturedEvent

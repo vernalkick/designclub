@@ -28,7 +28,7 @@ export default function Home({cities, events, groupedPeople}) {
           <div className="section">
             <H2>Upcoming Events</H2>
             {events.map(event => 
-              <FeaturedEvent event={event} />  
+              <FeaturedEvent event={event} key={event.id} />  
             )}
           </div>
           
@@ -36,7 +36,7 @@ export default function Home({cities, events, groupedPeople}) {
             <H2>Our Communities</H2>
             <div className="communities">
               {cities.map(city =>
-                <Community city={city} />  
+                <Community city={city} key={city.id} />  
               )}
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function Home({cities, events, groupedPeople}) {
                 <H3>{city}</H3>
                 <div className="people">
                   {groupedPeople[city].map(person =>
-                    <Person person={person} />
+                    <Person person={person} key={person.id} />
                   )}
                 </div>
               </div>

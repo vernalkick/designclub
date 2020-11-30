@@ -8,6 +8,7 @@ const H2 = ({children}) => (
         font-weight: 700;
         line-height: 1.1;
         margin: 0 0 0.5em 0;
+        font-family: 'sharp_grotesk_medium_25Rg';
       }
       
       @media (min-width: 800px) {
