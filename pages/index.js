@@ -31,6 +31,11 @@ export default function Home({cities, events, groupedPeople}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
+      <div className="video">
+        <div className="overlay" />
+        <img src="/video.gif" loading="lazy" />
+      </div>
+      
       <div className="wrapper">
         <div className="container">
           <Header />
@@ -38,6 +43,7 @@ export default function Home({cities, events, groupedPeople}) {
           <div className="section">
             <Intro />
           </div>
+          
           
           <div className="section">
             <H2>Upcoming Events</H2>
@@ -86,8 +92,26 @@ export default function Home({cities, events, groupedPeople}) {
     
       <style jsx>
         {`
+          .video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            // z-index: -1;
+          }
+          
+          .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(transparent, #1F1F1F);
+          }
+          
           .wrapper {
             overflow: hidden;
+            z-index: 2;
           }
           
           .section {

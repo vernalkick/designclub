@@ -17,6 +17,7 @@ const Header = () => (
           display: grid;
           grid-row-gap: 20px;
           margin-top: 4vw;
+          
         }
         
         .logo {
@@ -26,6 +27,7 @@ const Header = () => (
           display: flex;
           align-items: center;
           font-family: 'sharp_grotesk_medium_25Rg', system;
+          z-index: 2;
         }
         
         .logo:hover .dash {

@@ -14,6 +14,7 @@ const Navigation = () => (
           margin: 0;
           padding: 0;
           display: flex;
+          z-index: 2;
         }
         
         @media (max-width: 800px) {
