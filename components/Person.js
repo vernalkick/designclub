@@ -11,9 +11,11 @@ const Person = ({person}) => (
         <BoxContainer large>
           <H3 className="name">{person.name}</H3>
           <P>{person.bio}</P>
-          <div className="buttonContainer">
-            <Button href={person.instagram}>Follow on Instagram</Button>
-          </div>
+          {person.instagram &&
+            <div className="buttonContainer">
+              <Button href={person.instagram}>Follow on Instagram</Button>
+            </div>
+          }
         </BoxContainer>
       </div>
     </Box>

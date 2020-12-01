@@ -26,12 +26,18 @@ const Community = ({city, ...props}) => (
       {`
         .content {
           display: grid;
-          grid-template-columns: 1fr max-content;
+          grid-gap: 10px;
           align-items: center;
         }
         
         .links > *+* {
           margin-left: 10px;
+        }
+        
+        @media (min-width: 800px) {
+          .content {
+            grid-template-columns: 1fr max-content;
+          }
         }
       `}
     </style>

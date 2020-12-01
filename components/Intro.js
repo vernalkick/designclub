@@ -28,8 +28,10 @@
         
         .peace-wrapper {
           position: absolute;
-          left: 70%;
-          top: -332px;
+          left: 100%;
+          top: -300px;
+          transform: scale(0.4) translateX(-100%);
+          margin-left: 80px;
           display: none;
         }
         
@@ -46,21 +48,34 @@
           line-height: 1.3;
           margin-top: 30px;
           margin-bottom: 25px;
+          // margin-right: 30%;
         }
         
         .secondary {
           font-size: 18px;
           color: rgba(255, 255, 255, 0.75);
           line-height: 1.4;
+          // margin-right: 30%;
         }
         
         .welcome {
           margin-top: 30px;
+          font-weight: 600;
+          color: #fff;
         }
         
         @media (min-width: 800px) {
           .welcome {
             margin-top: 60px;
+          }
+          
+          .peace-wrapper {
+            position: absolute;
+            left: 70%;
+            top: -332px;
+            display: block;
+            transform: none;
+            margin: 0;
           }
           
           .thumbs-up,

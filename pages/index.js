@@ -102,8 +102,8 @@ export default function Home({cities, events, groupedPeople}) {
           
           .communities {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-gap: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-gap: 15px;
           }
           
           .events {
@@ -118,12 +118,17 @@ export default function Home({cities, events, groupedPeople}) {
           }
           
           .about-city {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
           }
           
           @media (min-width: 800px) {
             .container {
               padding: 40px;
+            }
+            
+            .communities {
+              grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+              grid-gap: 40px;
             }
             
             .section {

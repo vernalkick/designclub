@@ -5,7 +5,6 @@ const Navigation = () => (
       <NavigationItem url="#about-us">About</NavigationItem>
       <NavigationItem url="https://design-club-podcast.simplecast.com">Podcast</NavigationItem>
       <NavigationItem url="https://ottawa-design-club.myshopify.com">Shop</NavigationItem>
-      <NavigationItem url="mailto:kevin@kevinclark.ca">Contact</NavigationItem>
     </ul>
     
     <style jsx>
@@ -15,6 +14,12 @@ const Navigation = () => (
           margin: 0;
           padding: 0;
           display: flex;
+        }
+        
+        @media (max-width: 800px) {
+          ul > :global(*:first-child) {
+            display: none;  
+          }
         }
       `}
     </style>

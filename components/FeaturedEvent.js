@@ -1,6 +1,7 @@
 import { H3, P, Button } from "./designSystem"
 import { Box, BoxContainer } from "./Box"
 import Pill from "./Pill"
+import Image from 'next/image'
 
 const formattedDate = (dateString) => {
   const date = Date.parse(dateString)
@@ -13,7 +14,7 @@ const formattedDate = (dateString) => {
 const FeaturedEvent = ({event, ...props}) => (
   <div {...props}>
     <Box className="container">
-      <img src={event.image.url} className="image" />
+      <Image src={event.image.url} width={event.image.width} height={event.image.height} className="image" />
       <BoxContainer large>
         <div className="detailsContainer">
           <div className="titleContainer">
