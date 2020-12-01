@@ -25,6 +25,7 @@ const Header = () => (
           font-weight: bold;
           display: flex;
           align-items: center;
+          font-family: 'sharp_grotesk_medium_25Rg', system;
         }
         
         .logo:hover .dash {
@@ -38,6 +39,7 @@ const Header = () => (
           width: 30px;
           margin: 0 5px;
           transition: all .3s ease-in-out;
+          transform: translateY(3px);
         }
       `}
     </style>
