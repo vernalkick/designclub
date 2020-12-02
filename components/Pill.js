@@ -11,6 +11,7 @@ const Pill = ({children}) => (
         font-size: 14px;
         font-weight: bold;
         letter-spacing: 0.02em;
+        display: inline-block;
       `}
     </style>
   </>

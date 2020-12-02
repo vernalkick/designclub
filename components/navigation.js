@@ -1,8 +1,10 @@
+import { useRouter } from 'next/router'
+
 const Navigation = () => (
   <>
     <ul>
       <NavigationItem url="/" isSelected>Home</NavigationItem>
-      <NavigationItem url="#about-us">About</NavigationItem>
+      <NavigationItem url="/#about-us">About</NavigationItem>
       <NavigationItem url="https://design-club-podcast.simplecast.com">Podcast</NavigationItem>
       <NavigationItem url="https://ottawa-design-club.myshopify.com">Shop</NavigationItem>
     </ul>
@@ -27,42 +29,45 @@ const Navigation = () => (
   </>
 )
 
-const NavigationItem = ({url, isSelected, children}) => (
-  <>
-    <li className={isSelected && "selected"}>
-      <a href={url}>
-        {children}
-      </a>
-    </li>
-    
-    
-    <style jsx>
-      {`
-        li {
-          text-transform: uppercase;
-          letter-spacing: 0.17em;
-          color: rgba(255, 255, 255, 0.6);
-          margin-right: 2em;
-          font-size: 0.875em;
-        }
-        
-        li:hover {
-          color: #fff;
-        }
-        
-        .selected {
-          font-weight: bold;
-          color: #fff;
-        }
-        
-        @media (min-width: 800px) {
-          li { 
-            font-size: 1em;
+const NavigationItem = ({url, isSelected, children}) => {
+  const router = useRouter()
+  
+  return (
+    <>
+      <li className={router.pathname === url ? "selected" : ""}>
+        <a href={url}>
+          {children}
+        </a>
+      </li>
+      
+      
+      <style jsx>
+        {`
+          li {
+            text-transform: uppercase;
+            letter-spacing: 0.17em;
+            color: rgba(255, 255, 255, 0.6);
+            margin-right: 2em;
+            font-size: 0.875em;
           }
-        }
-      `}
-    </style>
-  </>
-)
-
+          
+          li:hover {
+            color: #fff;
+          }
+          
+          .selected {
+            font-weight: bold;
+            color: #fff;
+          }
+          
+          @media (min-width: 800px) {
+            li { 
+              font-size: 1em;
+            }
+          }
+        `}
+      </style>
+    </>
+  ) 
+}
 export default Navigation

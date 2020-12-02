@@ -9,6 +9,10 @@ const P = ({children, ...props}) => (
         color: rgba(255, 255, 255, 0.75);
       }
       
+      p + p {
+        margin-top: 1.5em;
+      }
+      
       @media (min-width: 800px) {
         p {
           font-size: 19px;

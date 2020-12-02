@@ -11,7 +11,7 @@
         <ThumbsUp />
       </div>
 
-      <p className="lede">The Design Club is a network of communities created by designers, for designers. You may find them in Montreal, Ottawa, Marseille, and online!</p>
+      <p className="lede">The Design Club is a network of communities created by designers, for designers. You may find them in Montréal, Ottawa, Marseille, and online!</p>
 
       <div className="secondary">
         <p>Through speaker events, panel discussions, workshops, podcasts and zines, they feature inspirational designers and creators from different background and disciplines. The club's mission is to bring creatives together through these initiatives and showcase all of the incredible design work happening in their communities and beyond.</p>

@@ -7,9 +7,10 @@ const Button = ({primary, href, children, ...props}) => (
         padding: 18px 30px 20px;
         display: inline-block;
         border-radius: 13px;
-        font-size: 19px;
+        font-size: 16px;
         font-weight: 600;
         cursor: pointer;
+        text-align: center;
       } 
       
       .primary {
@@ -20,6 +21,10 @@ const Button = ({primary, href, children, ...props}) => (
       .secondary {
         box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
       } 
+      
+      @media (min-width: 800px) {
+        font-size: 19px;
+      }
     `}</style>
   </>
 )
