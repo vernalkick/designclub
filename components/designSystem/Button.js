@@ -23,9 +23,13 @@ const Button = ({primary, href, children, ...props}) => (
       } 
       
       @media (min-width: 800px) {
-        font-size: 19px;
+        a {
+          font-size: 19px;
+        }
       }
     `}</style>
+    
+
   </>
 )
 

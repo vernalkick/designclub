@@ -28,7 +28,7 @@ const FeaturedEvent = ({event, ...props}) => (
             <P className="description">{event.description}</P>
             <div className="actions">
               {event.ticketUrl && <Button primary href={event.ticketUrl}>Get a ticket</Button>}
-              {event.facebookUrl && <Button>View on Facebook</Button>}
+              {event.facebookUrl && <Button href={event.facebookUrl}>View on Facebook</Button>}
             </div>
           </div>
         </div>
@@ -48,27 +48,38 @@ const FeaturedEvent = ({event, ...props}) => (
         
         .detailsContainer {
           display: grid;
-          
-          // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
           grid-gap: 25px;
         }
         
         .descriptionContainer {
-          // grid-column: span 2;
           display: grid;
           grid-gap: 25px;
+        }
+        
+        .actions {
+          display: grid;
+          grid-gap: 15px;
+        }
+      
+  
+      `}
+    </style>
+    
+    <style jsx>
+      {`@media (min-width: 800px) {
+        .detailsContainer {
+          grid-template-columns: 3fr 5fr;
+        }
+        
+        .actions {
+          display: block;
         }
         
         .actions > :global(*) {
           margin-right: 15px;
         }
-        
-        @media (min-width: 800px) {
-          .detailsContainer {
-            grid-template-columns: 3fr 5fr;
-          }
-        }
-      `}
+      }
+    `}
     </style>
   </div>
 )

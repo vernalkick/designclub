@@ -42,7 +42,7 @@ const Event = ({event}) => (
                 <P>{formattedTime(event.date)}</P>
                 <div className="buttonGroup">
                   {event.ticketUrl && <Button primary href={event.ticketUrl}>Get a ticket</Button>}
-                  {event.facebookUrl && <Button>View on Facebook</Button>}
+                  {event.facebookUrl && <Button href={event.facebookUrl}>View on Facebook</Button>}
                 </div>
               </div>
             </BoxContainer>
