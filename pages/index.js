@@ -8,6 +8,7 @@ import Community from '../components/Community'
 import Person from '../components/Person'
 import Intro from '../components/Intro'
 import Layout from '../components/Layout'
+import NoEvents from '../components/NoEvents'
 import { getEverything } from "../lib/api"
 
 export default function Home({cities, events, groupedPeople}) {
@@ -38,12 +39,7 @@ export default function Home({cities, events, groupedPeople}) {
           <H2>Upcoming Events</H2>
           <div className="events">
             {upcomingEvents.length == 0 &&
-              <Box>
-                <BoxContainer>
-                  <H4>We haven't announced our next event yet!</H4>
-                  <P>Follow us on Instagram to know when the next one will be.</P>
-                </BoxContainer>
-              </Box>
+              <NoEvents />
             }
             {upcomingEvents.map(event => 
               <FeaturedEvent event={event} key={event.id} />  
