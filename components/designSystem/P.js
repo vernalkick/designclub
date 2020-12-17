@@ -13,6 +13,14 @@ const P = ({children, ...props}) => (
         margin-top: 1.5em;
       }
       
+      p > :global(a) {
+        color: #fff;
+        font-weight: 500;
+        // text-decoration: underline;
+        // text-decoration-thickness: 2px;
+        // text-decoration-color: rgba(255, 255, 255, 0.2);
+      }
+      
       @media (min-width: 800px) {
         p {
           font-size: 19px;
