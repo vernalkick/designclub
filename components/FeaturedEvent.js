@@ -14,7 +14,7 @@ const formattedDate = (dateString) => {
 const FeaturedEvent = ({event, ...props}) => (
   <div {...props}>
     <Box className="container">
-      <a href={`/events/${event.id}`}>
+      <a href={`/events/${event.slug}`}>
         <Image src={event.image.url} width={event.image.width} height={event.image.height} className="image" />
       </a>
       <BoxContainer large>
