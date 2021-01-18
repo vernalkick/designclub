@@ -5,6 +5,7 @@ import { Box, BoxContainer } from "../../components/Box"
 import Pill from "../../components/Pill"
 import Speaker from "../../components/Speaker"
 import Markdown from "../../components/Markdown"
+import { useRouter } from 'next/router'
 
 
 const formattedDate = (dateString) => {
@@ -24,7 +25,11 @@ const formattedTime = (dateString) => {
 }
 
 const Event = ({event}) => {
-
+  const router = useRouter()
+  
+  if (router.isFallback) {
+    return <div>Loading...</div>
+  }
 
   return (
     <>
